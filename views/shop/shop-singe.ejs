@@ -1,0 +1,198 @@
+<% include ../partials/header %>
+
+<div class="ktieude text-xs-center">
+		<div class="ktieudetrong">
+			<h2>Tên sản phẩm chi tiết</h2>
+			<nav class="breadcrumb">
+				<a href="">Home </a> &nbsp; / &nbsp; <a href="">Shop</a>
+			</nav>
+		</div>
+		
+	</div> <!-- HET KHOI TIEU DE -->
+
+	<div class="sanpham">
+		<div class="container">
+			<div class="row">
+				<div class="images col-sm-6 wow fadeInLeftBig">
+					<a href="" class="bigimage"> <img src="../<%= productdataID.anhsp[0] %>" alt=""></a>
+					<div class="thumbnails">
+						<a href="" class="anhnho"><img src="../<%= productdataID.anhsp[1] %>" alt=""></a>
+						<a href="" class="anhnho"><img src="../<%= productdataID.anhsp[2] %>" alt=""></a>
+						<a href="" class="anhnho"><img src="../<%= productdataID.anhsp[3] %>" alt=""></a>
+
+					</div>
+				</div> <!-- HET IMAGES TRAI -->
+				<div class="summary col-sm-6 wow fadeInRightBig">
+					<h1 class="product-title"><%=productdataID.tensp %>	</h1>
+					<p class="price">$<%=productdataID.gia %></p>
+					<div class="description"><%= productdataID.thongtin %></div>
+					<div class="stock">Còn <%= productdataID.soluong %> sản phẩm trong kho</div>
+					<input type="hidden" class="soluong" value="<%= productdataID.soluong %>">
+					<form action="" class="cart">
+						<div class="quantity">
+							<span class="label"> QTY</span>
+							<input type="button" class="minus" value="-">
+							<input type="number" value="1" class="qty">
+							<input type="button" class="plus" value="+">
+							<button data-href="<%= productdataID._id %>" class="themsp button btn btn-primary"> Thêm vào giỏ hàng <i class="fa fa-long-arrow-right"></i></button>
+						</div>
+						<div class="variation">
+							<span class="label">Select Color</span>
+							<img src="../images/mau.png" alt="">
+						</div>
+					</form>
+
+
+				</div> 		<!-- HET NOI DUNG CHI TIET SP -->
+				<div class="tabspchitiet col-sm-12">
+					<div class="tren">
+						<ul class="tdtab">
+							<li><b class="active"> Description </b></li>
+							<li><b> Addition Info </b></li>
+							<li><b> Review (5)  </b></li>
+						</ul>
+					</div> <!-- HET TREN -->
+
+					<div class = "duoi">
+						<div class ="container">
+							<ul class= "ndtab">
+								<li>
+									<div class="divsanpham  xuathien">
+										<div class="row">
+											<%= productdataID.thongtin %>
+										</div>  <!-- het row -->
+									</div>
+								</li>
+								<li>
+									<div class="divsanpham ">
+										<div class="row">
+											<%= productdataID.thongtin %>
+										</div>  <!-- het row -->
+									</div>
+								</li>
+								
+								<li>
+									<div class="divsanpham  ">
+										<div class="row">
+											<%= productdataID.thongtin %>
+										</div>  <!-- het row -->
+									</div>
+								</li>
+								
+							</ul>
+						</div>
+					</div>
+
+				</div>
+				<div class="related-products col-sm-12 mt-100">
+					<div class="row">
+						<div class="col-sm-8 push-sm-2 text-xs-center wow fadeInDownBig">
+			 				<h2 class="kieuchuto">RELATED PRODUCTS</h2>
+			 				 
+			 			</div>
+					</div>
+					<% var cate = productdataID.danhmuc.name_dmsp %>
+					<div class="row">
+							<% var dem = 1 %>
+						<% dataproduct.forEach(function(motsanpham){if(dem <= 3){ %>
+							<%if(motsanpham.danhmuc.name_dmsp == productdataID.danhmuc.name_dmsp){ %>
+							<% dem++ %>
+							<div class="col-sm-4 text-xs-center">
+ 								<div class="motsanphamchuan">
+ 									<a href="../shop-singe/<%= motsanpham._id %>" class="cctop">
+ 										<span class="anh1sp"><img src="../<%= motsanpham.anhsp[0] %>" alt=""></span>
+ 										<h3> <%= motsanpham.tensp %></h3>
+ 										<span class="cat"> <%= motsanpham.danhmuc.name_dmsp %></span>
+ 										<div class="price">$<%= motsanpham.gia %></div>
+ 									</a>
+ 									<div class="tren">
+ 										<a href="../add-to-cart/<%= motsanpham._id %>"> Thêm vào giỏ hàng <i class="fa fa-long-arrow-right"></i> </a>
+ 									</div>
+ 								</div>
+ 							</div>
+
+							<% } %>
+						<%}%>
+
+						<%}) %>					 
+					</div>
+				</div>
+
+			</div> <!-- HET ROW -->
+		</div>	<!-- HET CONTAINER -->
+	</div>  <!-- HET KHOI SAN PHAM  -->
+
+	 <script>
+
+
+	jQuery(document).ready(function($) {
+			//  ajax cho thanh them hoac giam soluong san pham
+    $(document).on( 'click', '.plus, .minus', function() {
+
+        // Get values
+        var $qty        = $(this).closest('.quantity').find(".qty");
+        var currentVal  = parseFloat( $qty.val() );
+        var max         = <%= productdataID.soluong  %>
+        var min         = parseFloat( $qty.attr('min') );
+        var step        = $qty.attr('step');
+
+        // Format values
+        if ( ! currentVal || currentVal == "" || currentVal == "NaN" ) currentVal = 0;
+        if ( max == "" || max == "NaN" ) max = '';
+        if ( min == "" || min == "NaN" ) min = 0;
+        if ( step == 'any' || step == "" || step == undefined || parseFloat( step ) == "NaN" ) step = 1;
+
+        // Change the value
+        if ( $(this).is('.plus') ) {
+
+            if ( max && ( max == currentVal || currentVal > max ) ) {
+                $qty.val( max );
+            } else {
+                $qty.val( currentVal + parseFloat( step ) );
+            }
+
+        } else {
+
+            if ( min && ( min==currentVal || currentVal < min ) ) {
+                $qty.val( min );
+            } else if ( currentVal > 0 ) {
+                $qty.val( currentVal - parseFloat( step ) );
+            }
+
+        }
+
+        // Trigger change event
+        $qty.trigger('change');
+    });
+
+	// them san pham vao gio hang
+	$('body').on('click', '.themsp', function(event) {
+			id = $(this).data('href');
+
+			$.ajax({
+				url: '../admin/deletecatesnews/'+id,
+				type: 'post',
+				dataType: 'json'
+				
+			})
+			.done(function() {
+				console.log("success");
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+				// dung jquery xoa luon phan tuong
+				doituongcanxoa.remove();
+			});
+		}); 
+
+
+	});
+</script>
+
+
+<% include ../partials/footer %>
+
+

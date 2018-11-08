@@ -1,0 +1,60 @@
+<% include ../partiadmin/nav-left %>
+
+
+   
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+            <div class="col-sm-12">
+				<div class="jumbotron jumbotron-fluid text-xs-center">
+					<div class="container">
+						<h1 class="display-5 text-center">Khách Hàng</h1>
+					</div>
+			</div>
+
+            
+            <div class="card">
+              <div class="card-body">
+                <blockquote class="blockquote">
+                  <h2>ID:  <%= data._id %></h2>
+                  <h2>Tên Khách Hàng:  <%= data.username %></h2>
+                  <h3>SĐT :<%= data.phone %></h3>
+                  <h3>Địa Chỉ :<%= data.address %></h3>
+                  <hr>
+                  <footer class="card-blockquote"><cite title="Source title">Giỏ Hàng:</cite></footer>
+                  <table class="table">
+                      <thead>
+                          <tr>
+                              <th>ID sản Phẩm</th>
+                              <th>Tên Sản Phẩm</th>
+                              <th>Giá Sản Phẩm</th>
+                              <th>Ảnh Sản Phẩm</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                        <% data.giohang.forEach(function(motsanpham){ %>
+                          <tr>
+                              <td scope="row"> <%= motsanpham._id %></td>
+                              <td><%= motsanpham.tensp %></td>
+                              <td><%= motsanpham.gia %></td>
+                              <td><img src="/<%= motsanpham.anhsp[0] %>" height = "80px" alt=""></td>
+                          </tr>
+                       <% }) %>
+                      </tbody>
+                  </table>
+
+                </blockquote>
+              </div>
+            </div>
+        
+        </div>
+         
+    </div> <!-- /#right-panel -->
+
+    <!-- Right Panel -->
+
+
+    
+    
+</body>
+</html>

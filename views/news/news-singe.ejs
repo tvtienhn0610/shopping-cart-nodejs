@@ -1,0 +1,88 @@
+ <% include ../partials/header %>
+	<div class="ktieude text-xs-center">
+		<div class="ktieudetrong">
+			<h2>Tin chi tiết</h2>
+			<nav class="breadcrumb">
+				<a href="">Home </a> &nbsp; / &nbsp; <a href="">Tin tức</a>
+			</nav>
+		</div>
+		
+	</div> <!-- HET KHOI TIEU DE -->
+	<div class="tintuc">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-9">
+					<div class="mottinchuan tinchitiet wow fadeIn">
+						<a href="../news-singe/<%= datanewsid._id %>" class="anhtin">
+		 					<img src="../<%= datanewsid.imgage %>" alt="" class="">
+		 					<div class="ngaythang">
+		 					<b><%= datanewsid.time.getDay() %>/<%= datanewsid.time.getMonth() %>/<%= datanewsid.time.getFullYear() %></b>
+		 					</div>
+		 				</a>
+						<div class="noidungtin">
+							<h3><a href=""><%= datanewsid.title %> </a></h3> 
+							<div class="thongsotin"> <span class="author">By Admin</span> / <span class="comment">1 Comment</span></div>
+							 
+							  <p>Commodi lobortis? Hac voluptas, aptent natoque ad, deleniti exercitation urna cras ligula? Dui nisi repudiandae quisquam, leo, laboriosam. Senectus magni irure sint nisi voluptatum! Asperiores torquent illum, quibusdam facilisi ducimus laborum earum! Consequat cupidatat nascetur architecto eum praesent ullamcorper, magna fusce praesentium, etiam volutpat tortor vestibulum class ultrices quisquam, totam vivamus curae aliquam auctor, debitis non minus, quod. Pellentesque felis? Magna volutpat consequatur nisl torquent? Duis nisi per primis corporis per ipsam rutrum ullamcorper dignissimos eros leo nostrum, nulla torquent ipsum, sociis tempus occaecati, gravida dignissim integer, hic. Impedit bibendum adipisci, vero earum. Justo aenean egestas orci occaecat iusto consequat.</p>
+
+							  <blockquote>
+							  	nascetur architecto eum praesent ullamcorper, magna fusce praesentium, etiam volutpat tortor vestibulum class ultrices quisquam, totam vivamus curae aliquam auctor, debitis non minus, quod. Pellentesque felis? Magna volutpat consequatur nisl torquent? Duis nisi per primis corporis per ipsam rutrum ullamcorper dignissimos eros leo nostrum, nulla torquent ipsum, sociis tempus occaecati, gravida dignissim integer, hic. Impedit bibendum
+							  </blockquote>
+							  <hr>
+							   <p>Commodi lobortis? Hac voluptas, aptent natoque ad, deleniti exercitation urna cras ligula? Dui nisi repudiandae quisquam, leo, laboriosam. Senectus magni irure sint nisi voluptatum! Asperiores torquent illum, quibusdam facilisi ducimus laborum earum! Consequat cupidatat nascetur architecto eum praesent ullamcorper, magna fusce praesentium, etiam volutpat tortor vestibulum class ultrices quisquam, totam vivamus curae aliquam auctor, debitis non minus, quod. Pellentesque felis? Magna volutpat consequatur nisl torquent? Duis nisi per primis corporis per ipsam rutrum ullamcorper dignissimos eros leo nostrum, nulla torquent ipsum, sociis tempus occaecati, gravida dignissim integer, hic. Impedit bibendum adipisci, vero earum. Justo aenean egestas orci occaecat iusto consequat.</p>
+
+							  <blockquote>
+							  	nascetur architecto eum praesent ullamcorper, magna fusce praesentium, etiam volutpat tortor vestibulum class ultrices quisquam, totam vivamus curae aliquam auctor, debitis non minus, quod. Pellentesque felis? Magna volutpat consequatur nisl torquent? Duis nisi per primis corporis per ipsam rutrum ullamcorper dignissimos eros leo nostrum, nulla torquent ipsum, sociis tempus occaecati, gravida dignissim integer, hic. Impedit bibendum
+							  </blockquote>
+							  <hr>
+
+						</div>
+						
+					</div>
+					 
+					
+					
+				</div>
+				<div class="col-sm-3">
+					<form action="" class="search-form wow fadeInRightBig">
+						<input type="text" class="search-field" placeholder="Tìm kiếm">
+						<input type="submit" class="search-submit" >
+					</form>
+
+					<div class="widget wow fadeInRightBig">
+						<h2 class="widget-title"> Danh mục tin</h2>
+						<ul>
+							<ul>
+							 <% datacates.forEach(function(motdanhmuc){ %>
+								<li><a href="../news-cate/<%= motdanhmuc._id %>"> <%= motdanhmuc.cates_name %> </a></li>
+						<% }) %>
+						</ul>
+						</ul>
+					</div>
+
+					<div class="widget widget_recent_entries wow fadeInRightBig">
+						<h2 class="widget-title"> Tin gần đây</h2>
+						<% var dem = 1 %>
+						<% datanews.forEach(function(mottintuc){if(dem <= 5){ %>
+							<% if(datanewsid.cates.cates_name == mottintuc.cates.cates_name){ %>
+								<% dem++ %>
+								<a href="news-singe/<%=mottintuc.cates._id %>" class="mottinnho">
+		 						<img src="images/thumbnails2.png" alt="" class="">
+								 <b><%= mottintuc.title %></b>
+								 <i><b><%= mottintuc.time.getDay() %>/<%= mottintuc.time.getMonth() %>/<%= mottintuc.time.getFullYear() %></b></i>
+							 	</a>
+						 <%} %>
+					<%	} %>
+					<%	}) %>
+						
+						
+						
+					</div>
+
+				</div>
+			</div>  <!-- HET ROW -->
+		</div> <!-- HET CONTAINER -->
+	</div>  <!-- HET TIN TƯC -->
+
+
+  <% include ../partials/footer %>

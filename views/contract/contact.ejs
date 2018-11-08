@@ -1,0 +1,21 @@
+ <% include ../partials/header %>
+    <div class="container">
+        <div class="row">
+            <form method='post', action='/sendmail' class = "col-sm-9">
+                <h1>Liên Hệ</h1>
+                <div class="form-group ">
+                  <label for="">Mail</label>
+                  <input type="email" class="form-control" name="email"  placeholder="email">
+                <br>
+                  <label for="">Tên Khách Hàng</label>
+                  <input type="text" class="form-control" name="name"  placeholder="name">
+                   <br>
+                  <label for="">Ý Kiến</label>
+                  <textarea class="form-control" name="message" id="" rows="3"></textarea>
+                  <br>
+                  <button type="submit" class="btn btn-primary">gửi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+ <% include ../partials/footer %>

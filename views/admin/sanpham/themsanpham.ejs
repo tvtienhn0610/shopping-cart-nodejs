@@ -1,0 +1,84 @@
+<% include ../partiadmin/nav-left %>
+   
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+
+        <div class="container ">   
+        <div class="jumbotron">
+          <h2 class="display-5 text-center">Thêm Sản Phẩm</h2>
+          <hr class="my-2">
+          <div class="upload">
+            <form id="upload-widget" method="post" action="../admin/upload" class="dropzone text-center">
+               <div class="fallback">
+               <input name="file" type="file" />
+                </div>
+            </form>
+
+            <form action="../admin/themsanpham" method="post">
+              <div class="form-group">
+                <label for="">Tên Sản Phẩm</label>
+                <input type="text" class="form-control" name="tensp" id="" aria-describedby="helpId" placeholder="tên sản phẩm">
+              </div>
+              <div class="form-group">
+                <label for="">Giá Sản Phẩm</label>
+                <input type="text" class="form-control" name="gia" id="" aria-describedby="helpId" placeholder="giá sản phẩm">
+              </div>
+              <div class="form-group">
+                <label for="">Thông Tin Sản Phẩm</label>
+                <textarea class="form-control" name="thongtin" id="" rows="4"></textarea>
+              </div>
+               <div class="form-group">
+                <label for="">Số Lượng</label>
+                <input type="text" class="form-control" name="soluong" id="" aria-describedby="helpId" placeholder="số lượng sản phẩm">
+              </div>
+               <div class="form-group">
+                <label for="">Danh Mục Sản Phẩm</label>
+                <select name="_iddmsp" id="" class="form-control">
+                    <% data.forEach(function(motphantu){ %>
+                        <option value="<%= motphantu._id %>"><%= motphantu.name_dmsp %></option>
+                     <% }) %>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-success ">Thêm Sản Phẩm</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    
+         
+    </div><!-- /#right-panel -->
+
+    <!-- Right Panel -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <!-- dropzong JavaScript -->
+    <script src="/javascripts/dropzone.js"></script>
+    <script>
+      Dropzone.options.uploadWidget = {
+        paramName: 'file',
+        maxFilesize: 2, // MB
+        maxFiles: 1,
+        dictDefaultMessage: 'kéo thả hình vào ô hoặc click vào ô',
+        
+  acceptedFiles: 'image/*',
+  init: function() {
+    this.on('success', function( file, resp ){
+      console.log( file );
+      console.log( resp );
+    });
+   
+  },
+  
+
+    </script>
+
+
+    
+</body>
+</html>

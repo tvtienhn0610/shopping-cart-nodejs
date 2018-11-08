@@ -1,0 +1,81 @@
+<% include ../partiadmin/nav-left %>
+   
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+
+        <div class="container ">   
+        <div class="jumbotron">
+          <h2 class="display-5 text-center">Sửa Slider</h2>
+          <hr class="my-2">
+          <div class="upload">
+            <form id="upload-widget" method="post" action="../uploadslider" class="dropzone text-center">
+               <div class="fallback">
+               <input name="file" type="file" />
+                </div>
+            </form>
+
+            <form action="/admin/editslider/<%= data._id %>" method="post">
+              <div class="form-group">
+                <label for="">Title1</label>
+                <input type="text" class="form-control" name="title1" id=""  value="<%= data.title1 %>" >
+              </div>
+              <div class="form-group ">
+                <input type="hidden" class="form-control" name="anh" id=""  value="<%= data.image[0] %>" >
+              </div>
+              <div class="form-group">
+                <label for="">Title2</label>
+                <input type="text" class="form-control" name="title2" id=""  value="<%= data.title2 %>" >
+              </div>
+              <button type="submit" class="btn btn-success ">Sửa Slide</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    
+         
+    </div><!-- /#right-panel -->
+
+    <!-- Right Panel -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <!-- dropzong JavaScript -->
+    <script src="/javascripts/dropzone.js"></script>
+    <script>
+      Dropzone.options.uploadWidget = {
+        paramName: 'file',
+        maxFilesize: 2, // MB
+        maxFiles: 1,
+        dictDefaultMessage: 'kéo thả hình vào ô hoặc click vào ô nếu bạn muốn đổi ảnh ',
+        
+  acceptedFiles: 'image/*',
+  init: function() {
+    this.on('success', function( file, resp ){
+      console.log( file );
+      console.log( resp );
+    });
+    this.on('thumbnail', function(file) {
+      if ( file.width < 640 || file.height < 480 ) {
+        file.rejectDimensions();
+      }
+      else {
+        file.acceptDimensions();
+      }
+    });
+  },
+  accept: function(file, done) {
+    file.acceptDimensions = done;
+    file.rejectDimensions = function() {
+      done('The image must be at least 640 x 480px')
+    };
+  }
+};
+    </script>
+ 
+    
+</body>
+</html>

@@ -1,0 +1,398 @@
+<% include partials/header %>
+
+ <div class="slidehome wow fadeIn">
+ 			<div id="slidetrangchu" class="carousel slide" data-ride="carousel" data-interval="0">
+ 				<ol class="carousel-indicators">
+ 					<li data-target="#slidetrangchu" data-slide-to="0" class="active"></li>
+ 					<li data-target="#slidetrangchu" data-slide-to="1"></li>
+ 					<li data-target="#slidetrangchu" data-slide-to="2"></li>
+ 				</ol>
+ 				<div class="carousel-inner" role="listbox">
+				 <% var dem = 1; %>
+				 <% dataslide.forEach(function(motslide){ %>
+
+				 	<div class="carousel-item <% if(dem == 1){ %> active ; <% dem++ %> <% } %>">
+ 						<div class="motslide container">
+ 							<img src="<%= motslide.image %>" alt="" class="anhsl img-fluid" >
+ 							<div class="container2">
+ 								<div class="row"> 									
+ 									<div class="col-sm-7 push-sm-5">
+ 										<h2><%= motslide.title1 %></h2>
+ 										<div class="desc"><%= motslide.title2 %></div>
+ 										<a href="shop" class="nutslide btn btn-outline-secondary"> Shop Now <i class="fa fa-long-arrow-right"></i> </a>
+ 									</div>
+ 								</div>
+ 							</div>
+ 						</div> <!-- het motslide -->
+
+ 					</div>
+ 					 
+
+				<% }) %>
+ 					 
+ 				</div>
+ 				<a class="left carousel-control" href="#slidetrangchu" role="button" data-slide="prev">
+ 				 	
+ 					<span class="sr-only">Previous</span>
+ 				</a>
+ 				<a class="right carousel-control" href="#slidetrangchu" role="button" data-slide="next">
+ 					 
+ 					<span class="sr-only">Next</span>
+ 				</a>
+ 			</div>
+ </div>  <!-- HET SLIDEHOME -->
+
+ <div class="badichvu wow bounceInUp">
+ 	<div class="container">
+ 		<div class="row">
+ 			<div class="col-sm-4">
+ 				<div class="divdichvu">
+ 					<h2><a href="shop/men"> MEN'S COLLECTION </a></h2>
+ 				</div>
+ 			</div>
+ 			<div class="col-sm-4">
+ 				<div class="divdichvu">
+ 					<h2><a href="shop/women"> WOMEN'S COLLECTION </a></h2>
+ 				</div>
+ 			</div>
+ 			<div class="col-sm-4">
+ 				<div class="divdichvu">
+ 					<h2><a href="shop/accessouies"> ACCESSORIES COLLECTION </a></h2>
+ 				</div>
+ 			</div>
+
+ 		</div>
+ 	</div>
+ </div>  <!-- HET BADICHVU -->
+
+ <div class="spnoibat">
+ 	<div class="container">
+ 		<div class="row">
+ 			<div class="col-sm-8 push-sm-2 text-xs-center wow fadeInDownBig">
+ 				<h2 class="kieuchuto">FEATURED PRODUCTS</h2>
+ 				<p class="mota">The Love Boat soon will be making another run the love boat promises something for everyone one two three four five
+ six seven eight Sclemeel schlemazel hasenfeffer incorporated.</p>
+ 			</div>
+ 		</div>
+ 		<div class="row gutter10">
+ 			<% dataproduct.forEach(function(motsanpham){ if(motsanpham.danhmuc.name_dmsp == "Featured"){ %>
+		
+				<div class="col-sm-3 text-xs-center">
+ 					<div class="motsanphamchuan">
+ 						<a href="shop-singe/<%= motsanpham._id %>" class="cctop">
+ 							<span class="onsale">Sale</span>
+ 							<span class="newnew">New</span>
+ 							<span class="anh1sp"><img src="<%= motsanpham.anhsp[0] %>" alt=""></span>
+ 							<h4> <%= motsanpham.tensp %></h4>
+ 							<span class="cat"><%= motsanpham.danhmuc.name_dmsp %></span>
+ 							<div class="price">$<%=motsanpham.gia %></div>
+ 						</a>
+ 						<div class="tren">
+ 						<a href="../add-to-cart/<%= motsanpham._id %>"> Thêm vào giỏ hàng <i class="fa fa-long-arrow-right"></i> </a>
+ 						</div>
+ 					</div>
+ 				</div>
+			<% }%>
+			<% }) %>
+ 		</div>
+ 	</div>
+ </div> <!-- HET SAN PHAM NOI BAT  -->
+
+ <div class="quangcao1home  wow fadeInUpBig">
+ 	<div class="container">
+ 		<div class="row">
+ 			<div class="col-sm-12">
+ 				<div class="qchome text-xs-center">
+ 					<h2>We offer a brand new fashion</h2>
+ 					<p>SIGN UP NOW & GRAB 30% OFF</p>
+ 					<a href="/register" class="nutslide btn btn-outline-secondary"> Sign Up Now <i class="fa fa-long-arrow-right"></i> </a>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+ </div> <!--  HET QUANG CAO TRANG HOME -->
+
+ <div class="sanphamhome">
+ 	<div class="container">
+ 		<div class="row">
+ 			<div class="col-sm-8 push-sm-2  wow fadeInDownBig">
+ 				<div class="text-xs-center">
+	 				<h2 class="kieuchuto">FRESH ARRIVAL</h2>
+	 				<p class="mota">The Love Boat soon will be making another run the love boat promises something for everyone one two three four five
+	 six seven eight Sclemeel schlemazel hasenfeffer incorporated.</p>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+
+ 	<div class="tabsanpham  wow fadeInDownBig">
+ 		<div class="tren">
+ 			<ul class="tdtab">
+ 				<li><b> Popular products </b></li>
+ 				<li><b class="active"> News products </b></li>
+ 				<li><b> Men's Fashion </b></li>
+ 				<li><b> Women's Fashion  </b></li>
+ 			</ul>
+ 		</div> <!-- HET TREN -->
+ 		<div class="duoi">
+ 		<div class="container">
+ 			<ul class="ndtab">
+ 				<li>
+ 					<div class="divsanpham ">
+ 						<div class="row">
+						 <% var dem1 = 1 %>
+						 <% dataproduct.forEach(function(motsanpham){ if(dem1 <=6){ %>
+								<% dem1++ %>
+							<div class="col-sm-4 text-xs-center">
+ 								<div class="motsanphamchuan">
+ 									<a href="shop-singe/<%= motsanpham._id %>" class="cctop">
+ 										<span class="onsale">Sale</span>
+ 										<span class="newnew">New</span>
+ 										<span class="anh1sp"><img src="<%= motsanpham.anhsp[0] %>" alt=""></span>
+ 										<h3><%= motsanpham.tensp %></h3>
+ 										<span class="cat"> <%= motsanpham.danhmuc.name_dmsp %> </span>
+ 										<div class="price"> $<%= motsanpham.gia %> </div>
+ 									</a>
+ 									<div class="tren">
+ 										<a href="../add-to-cart/<%= motsanpham._id %>"> Thêm vào giỏ hàng <i class="fa fa-long-arrow-right"></i> </a>
+ 									</div>
+ 								</div>
+ 							</div>
+
+
+						<% }%>
+
+						<% }) %>
+ 							
+ 						</div>  <!-- het row -->
+ 					</div>
+ 				</li>
+
+ 				<li>
+ 					<div class="divsanpham  xuathien">
+						<div class="row">
+						<% var dem = 1 %>
+						<% dataproduct.forEach(function(motsanpham){if(dem <= 6){ %>
+							<%if(motsanpham.danhmuc.name_dmsp == "New"){ %>
+							<% dem++ %>
+							<div class="col-sm-4 text-xs-center">
+ 								<div class="motsanphamchuan">
+ 									<a href="shop-singe/<%= motsanpham._id %>" class="cctop">
+ 										<span class="anh1sp"><img src="<%= motsanpham.anhsp[0] %>" alt=""></span>
+ 										<h3> <%= motsanpham.tensp %></h3>
+ 										<span class="cat"> <%= motsanpham.danhmuc.name_dmsp %></span>
+ 										<div class="price">$<%= motsanpham.gia %></div>
+ 									</a>
+ 									<div class="tren">
+ 										<a href="../add-to-cart/<%= motsanpham._id %>"> Thêm vào giỏ hàng <i class="fa fa-long-arrow-right"></i> </a>
+ 									</div>
+ 								</div>
+ 							</div>
+
+							<% } %>
+						<%}%>
+
+						<%}) %>	
+ 							
+
+ 						</div>  <!-- het row -->
+ 					</div>
+ 				</li>
+
+ 				<li>
+ 					<div class="divsanpham  ">
+						<div class="row">
+						<% var dem = 1 %>
+						<% dataproduct.forEach(function(motsanpham){if(dem <= 6){ %>
+							<%if(motsanpham.danhmuc.name_dmsp == "WomenCollection"){ %>
+							<% dem++ %>
+							<div class="col-sm-4 text-xs-center">
+ 								<div class="motsanphamchuan">
+ 									<a href="shop-singe/<%= motsanpham._id %>" class="cctop">
+ 										<span class="anh1sp"><img src="<%= motsanpham.anhsp[0] %>" alt=""></span>
+ 										<h3> <%= motsanpham.tensp %></h3>
+ 										<span class="cat"> <%= motsanpham.danhmuc.name_dmsp %></span>
+ 										<div class="price">$<%= motsanpham.gia %></div>
+ 									</a>
+ 									<div class="tren">
+ 										<a href="../add-to-cart/<%= motsanpham._id %>"> Thêm vào giỏ hàng <i class="fa fa-long-arrow-right"></i> </a>
+ 									</div>
+ 								</div>
+ 							</div>
+
+							<% } %>
+						<%}%>
+
+						<%}) %>	
+ 							
+
+ 						</div>  <!-- het row -->
+ 					</div>
+ 				</li>
+
+ 				<li>
+ 				<div class="divsanpham  ">
+						<div class="row">
+						<% var dem = 1 %>
+						<% dataproduct.forEach(function(motsanpham){if(dem <= 6){ %>
+							<%if(motsanpham.danhmuc.name_dmsp == "MenCollection"){ %>
+							<% dem++ %>
+							<div class="col-sm-4 text-xs-center">
+ 								<div class="motsanphamchuan">
+ 									<a href="shop-singe/<%= motsanpham._id %>" class="cctop">
+ 										<span class="anh1sp"><img src="<%= motsanpham.anhsp[0] %>" alt=""></span>
+ 										<h3> <%= motsanpham.tensp %></h3>
+ 										<span class="cat"> <%= motsanpham.danhmuc.name_dmsp %></span>
+ 										<div class="price">$<%= motsanpham.gia %></div>
+ 									</a>
+ 									<div class="tren">
+ 										<a href="../add-to-cart/<%= motsanpham._id %>"> Thêm vào giỏ hàng <i class="fa fa-long-arrow-right"></i> </a>
+ 									</div>
+ 								</div>
+ 							</div>
+
+							<% } %>
+						<%}%>
+
+						<%}) %>	
+ 							
+
+ 						</div>  <!-- het row -->
+ 					</div>
+ 				</li>	
+				
+ 						
+
+
+ 				</li>
+
+
+ 			</ul>
+
+ 		</div> <!-- HET CONTAINER -->
+ 		</div> <!-- HET DUOI -->
+ 	</div><!-- het tab san pham   -->
+ 	<div class="divnutviewall">
+ 		<a href="/shop" class="nutslide btn btn-outline-secondary"> VIEW ALL PRODUCTS  <i class="fa fa-long-arrow-right"></i> </a>
+ 	</div>
+ 	
+ </div>  <!-- HET SANPHAM HOME  -->
+
+ <div class="commentkhachhang mt-100-vien  wow fadeInDownBig">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 push-sm-2">
+ 				<div class="text-xs-center">
+	 				<h2 class="kieuchuto">TESTIMONIALS</h2>
+	 				 
+ 				</div>
+ 			</div>
+			</div>
+		</div>
+
+			<div id="slidecamnhan" class="carousel slide" data-ride="carousel">
+	 				<ol class="carousel-indicators">
+	 					<li data-target="#slidecamnhan" data-slide-to="0" class="active"></li>
+	 					<li data-target="#slidecamnhan" data-slide-to="1"></li>
+	 					<li data-target="#slidecamnhan" data-slide-to="2"></li>
+	 				</ol>
+	 				<div class="carousel-inner" role="listbox">
+	 					<div class="carousel-item active">
+	 						<div class="motslidecn text-xs-center">
+	 							<img src="./images/avatar.png" alt="" class="anhava">
+	 							<div class="caunx">The Love Boat soon will be making another run the love boat promises something for everyone one two three four five six seven eight Sclemeel schlemazel hasenfeffer incorporated the first mate </div>
+	 							<h4 class="tentg"> Marvel</h4>
+	 							<p class="nghe">CopyWriter</p>
+	 						</div>  <!-- HET 1 SLIDE CN -->
+	 					</div>
+	 					<div class="carousel-item ">
+	 						<div class="motslidecn text-xs-center">
+	 							<img src="./images/avatar.png" alt="" class="anhava">
+	 							<div class="caunx">The Love Boat soon will be making another run the love boat promises something for everyone one two three four five six seven eight Sclemeel schlemazel hasenfeffer incorporated the first mate </div>
+	 							<h4 class="tentg"> Marvel</h4>
+	 							<p class="nghe">CopyWriter</p>
+	 						</div>  <!-- HET 1 SLIDE CN -->
+	 					</div>
+	 					 <div class="carousel-item ">
+	 						<div class="motslidecn text-xs-center">
+	 							<img src="./images/avatar.png" alt="" class="anhava">
+	 							<div class="caunx">The Love Boat soon will be making another run the love boat promises something for everyone one two three four five six seven eight Sclemeel schlemazel hasenfeffer incorporated the first mate </div>
+	 							<h4 class="tentg"> Marvel</h4>
+	 							<p class="nghe">CopyWriter</p>
+	 						</div>  <!-- HET 1 SLIDE CN -->
+	 					</div>
+	 					 
+	 				</div>
+	 				<a class="left carousel-control" href="#slidecamnhan" role="button" data-slide="prev">
+	 					 
+	 					<span class="sr-only">Previous</span>
+	 				</a>
+	 				<a class="right carousel-control" href="#slidecamnhan" role="button" data-slide="next">
+	 				 
+	 					<span class="sr-only">Next</span>
+	 				</a>
+	 			</div> 	
+
+ </div>   <!-- HET PHAN COMMENT KHACH HANG -->
+<div class="tinhome mt-100-vien">
+	<div class="container">
+		<div class="row">
+ 			<div class="col-sm-8 push-sm-2  wow fadeInDownBig">
+ 				<div class="text-xs-center">
+	 				<h2 class="kieuchuto">LATEST NEWS</h2>
+	 				<p class="mota">Tin tuc hang ngay danh cho ban.</p>
+ 				</div>
+ 			</div>
+ 		</div>
+ 		<div class="row  wow fadeInDownBig">
+		 	<% var dem = 1 %>
+			 <% datanews.forEach(function(mottintuc){ if(dem <= 4){ %>
+				 <% dem++ %>
+				<div class="col-sm-6">
+ 				<a href="new-singe/<%= mottintuc._id %>" class="anhtin">
+ 					<img src="<%= mottintuc.imgage[0] %>" alt="" class="">
+ 					<div class="ngaythang">
+ 						<i><%= mottintuc.time %></i>
+ 					</div>
+ 				</a>
+ 				<div class="ndtin">
+ 					<a href="new-singe/<%= mottintuc._id %>" class="td1tin"><%= mottintuc.title %></a>
+ 					<a href="new-singe/<%= mottintuc._id %>" class="rm">READ MORE <i class="fa fa-long-arrow-right"></i></a>
+ 				</div>
+ 			</div>
+ 			
+			 <%}%>
+
+			<% }) %>
+ 			
+ 			
+
+ 		</div>
+	</div>
+</div> <!-- HET TIN HOME -->
+
+<div class="nhanemail  wow fadeInDownBig">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-10 push-xs-1 text-xs-center">
+				<h2>SUBSCRIBE to our newsletters</h2>
+				<p>Be the First to know about our Fresh Arrivals and much more!</p>
+				<form action="/subscribeemail" method="post">
+					<div class="form" >
+					<input name = "emailsub" type="email" class="form-control nhanmail" placeholder="Enter your email ID">
+					<input type="submit" class="form-control" value="SUBSCRIBE">
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>  <!-- HET KHOI NHAN EMAIL -->
+  
+<% include partials/footer %>
+
+
+<script>
+	jQuery(function($){
+		
+	});
+</script>

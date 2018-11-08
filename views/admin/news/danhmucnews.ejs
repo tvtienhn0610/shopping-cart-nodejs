@@ -1,0 +1,201 @@
+<% include ../partiadmin/nav-left %>
+   
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+
+        <div class="container-fluid mt-2 pt-2 ">
+		<div class="row">
+			<div class="col-sm-4 form">
+				<div class = "themdmsp ">	
+				 <div class="form-group text-xs-center " >
+					<br>
+					<br>
+					<h1 class="display-5">Thêm Danh Mục </h1>
+					<input name="cates_name" type="text" class="form-control" id="cates_name" aria-describedby="emailHelp" placeholder="nhâp tên danh mục">
+					</div>	 
+					<button  type="submit" class="btn btn-success nutxulyajax"   value="Them Danh muc">Thêm Danh Mục</button>
+				</div>		
+
+			</div>
+
+			<div class="col-sm-8">
+				<div class="jumbotron jumbotron-fluid text-xs-center">
+					<div class="container">
+						<h1 class="display-5">Danh Mục tin Tức</h1>
+						<p class="lead">Các Danh Mục Đã Thêm</p>
+					</div>
+				</div>
+				<div >
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID Danh Mục</th>
+                                <th>Tên Danh Mục</th>
+                                <th>Quản Lý</th>
+                            </tr>
+                        </thead>
+                        <tbody class="ajax-add">
+                        <% data.forEach(function(motphantu){ %>
+                            <tr>
+                                <td><%= motphantu._id %></td>
+                                <td class="namedmsp">
+									<label class="namedisplay"> <%= motphantu.cates_name %></label>
+									<div class="formedit form-group sr-only ">
+										<input type="text" class="form-control" name="inputName" id="inputName" value="<%= motphantu.cates_name %>">
+									</div>
+								</td>
+								
+                                <td>
+                                    <a  data-href="<%= motphantu._id %>" class="nutedit btn  "><i class="fa fa-pencil"></i> sửa </a>
+									<a  data-href="<%= motphantu._id %>" class="nutsave sr-only btn  "><i class="fa fa-save"></i> save </a>/
+                                    <a  data-href="<%= motphantu._id %>" class="nutxoa btn"><i class=" fa fa-remove"></i> xóa </a>
+                                </td>
+                            </tr>
+                        	 <% }) %>
+                        </tbody>
+                    </table>
+			
+				</div>
+			</div>
+		</div>
+	</div>
+
+   
+         
+    </div><!-- /#right-panel -->
+
+    <!-- Right Panel -->
+   
+
+    <script>
+      jQuery(function($) {
+            //them danh muc san pham
+            $('.nutxulyajax').click(function(event) {
+			// su dung ajax them moi du liue
+			$.ajax({
+				url: '../admin/addnewscates',
+				type: 'post',
+				dataType: 'json',
+				data: {cates_name: $('#cates_name').val()}
+			
+			})
+			.done(function() {
+				console.log("success");
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function(res) {
+				console.log(res._id);
+				var _id = res._id;
+				var cates_name = res.cates_name;
+				console.log(cates_name);
+
+				//sau khi them su dung bien res de lay gia tri id vua nhan duoc
+				noidung = '<tr>';
+				noidung += '<td>'	+ _id +  '</td>';
+				noidung += '<td class="namedmsp">';
+				noidung += '<label class="namedisplay">'+cates_name+'</p>';
+				noidung += '<div class="formedit form-group sr-only ">';
+				noidung += '<input type="text" class="form-control" name="inputName" id="inputName" value ="'+cates_name+'" >';
+				noidung += '</div>';
+				noidung += '</td>';
+				noidung += '<td>';
+				noidung += '<a  data-href="'+_id+'" class="nutedit btn  "><i class="fa fa-pencil"></i> sửa </a>';
+				noidung += '<a  data-href="'+_id+'" class="nutsave sr-only btn  "><i class="fa fa-save"></i> save </a>/';
+                noidung += ' <a  data-href="'+_id+'" class="nutxoa btn"><i class=" fa fa-remove"></i> xóa </a> ';	
+				
+				$('.ajax-add').append(noidung);
+
+				$('#name_dmsp').val('');
+
+
+			});
+			
+		});
+
+		//xoá đối tượng
+
+		$('body').on('click', '.nutxoa', function(event) {
+			id = $(this).data('href');
+			doituongcanxoa = $(this).parent().parent();
+
+			$.ajax({
+				url: '../admin/deletecatesnews/'+id,
+				type: 'post',
+				dataType: 'json'
+				
+			})
+			.done(function() {
+				console.log("success");
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+				// dung jquery xoa luon phan tuong
+				doituongcanxoa.remove();
+			});
+		}); 
+
+		//edit danh muc
+
+		$('body').on('click', '.nutedit', function(event) {
+				id = $(this).data('href');
+
+				//next la di xuong
+				//parent la di len
+				//dung find de tim class
+				$(this).parent().parent().find('.namedmsp').find('.namedisplay').addClass('sr-only');
+				$(this).parent().parent().find('.namedmsp').find('.formedit').removeClass('sr-only');
+				$(this).addClass('sr-only');
+				$(this).parent().find('.nutsave').removeClass('sr-only');
+			//	$(this).parent().parent().parent().parent().parent().parent().parent().find('.form').find('.suasanpham').removeClass('sr-only');
+				event.preventDefault();
+				/* Act on the event */
+				
+		});
+
+		$('body').on('click', '.nutsave', function(event) {
+				//lay du lieu tu ham minh click
+				nameedit = $(this).parent().parent().find('.namedmsp').find('.formedit').children('input').val();
+				console.log(nameedit);
+				//du du liue vao su dung ajax update du lieu
+
+				//console.log(noidung);
+				//cho hien thi nhu binh thuong
+				$(this).parent().parent().find('.namedmsp').find('.namedisplay').html(nameedit).removeClass('sr-only');
+				$(this).parent().parent().find('.namedmsp').find('.formedit').addClass('sr-only');
+				$(this).parent().find('.nutedit').removeClass('sr-only');
+				$(this).parent().find('.nutsave').addClass('sr-only');
+				
+
+				$.ajax({
+					url: '../admin/editcatesnews/'+id,
+					type: 'post',
+					dataType: 'json',
+					data: {cates_name: nameedit }			
+				})
+				.done(function() {
+					console.log("success");
+				})
+				.fail(function() {
+					console.log("error");
+				})
+				.always(function() {
+					console.log("complete");
+				});
+				
+
+				event.preventDefault();
+				/* Act on the event */
+			});
+			//them du lieu	
+
+        })
+    </script>
+    
+</body>
+</html>

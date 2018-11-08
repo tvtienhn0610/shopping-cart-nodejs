@@ -1,0 +1,97 @@
+<% include ../partiadmin/nav-left %>
+<script type="text/javascript">
+    function xoahaykhong(tinnhan){
+        if(window.confirm(tinnhan)==true){
+            return true;
+        }
+         return false;
+        }
+</script>
+
+   
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+            <div class="col-sm-12">
+				<div class="jumbotron jumbotron-fluid text-xs-center">
+					<div class="container">
+						<h1 class="display-5 text-center">Khách Hàng</h1>
+					</div>
+				</div>
+				<div >
+                   <table class="table text-center " >
+                       <thead>
+                           <tr>
+                               <th>ID User</th>
+                               <th>UserName</th>
+                               <th>SDT</th>
+                               <th>Địa Chỉ</th>
+                               <th>Quản Lý</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                       <% data.forEach(function(motphantu){ %>
+                            <tr>
+                               <td><%= motphantu._id %></td>
+                               <td><%= motphantu.username %></td>
+                               <td><%= motphantu.phone %></td>
+                               <td><%= motphantu.address %></td>
+                                <td>
+                                    <a  href="../admin/detailuser/<%= motphantu._id %>" class="nutedit btn  "><i class="fa fa-pencil"></i> Chi Tiết </a>
+									/
+                                    <a onclick="return xoahaykhong('bạn có chắc chắn muốn xóa không');" data-href="<%= motphantu._id %>" class="nutxoa btn">
+                                    <i class="fa fa-remove" aria-hidden="true"> xóa </i></a>
+                                </td>
+                           </tr>
+                        <% }) %>
+                           
+                       </tbody>
+                   </table>
+			
+				</div>
+	
+        
+        </div>
+         
+    </div> <!-- /#right-panel -->
+
+    <!-- Right Panel -->
+
+
+    <script>
+         jQuery(function($) {
+           
+		//xoá đối tượng
+
+		$('body').on('click', '.nutxoa', function(event) {
+			id = $(this).data('href');
+			doituongcanxoa = $(this).parent().parent();
+			$.ajax({
+				url: '../admin/deletuser/'+id,
+				type: 'post',
+				dataType: 'json'
+				
+			})
+			.done(function() {
+				console.log("success");
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+				// dung jquery xoa luon phan tuong
+				doituongcanxoa.remove();
+			});
+		}); 
+
+		//edit danh muc
+
+		
+        })
+    </script>
+
+    
+    
+</body>
+</html>

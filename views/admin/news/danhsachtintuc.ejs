@@ -1,0 +1,88 @@
+<% include ../partiadmin/nav-left %>
+   
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+            <div class="col-sm-12">
+				<div class="jumbotron jumbotron-fluid text-xs-center">
+					<div class="container">
+						<h1 class="display-5 text-center">Danh Sách Tin Tức</h1>
+					</div>
+				</div>
+				<div >
+                   <table class="table text-center " >
+                       <thead>
+                           <tr>
+                               <th>ID </th>
+                               <th>Title</th>
+                               <th>Ảnh Tin</th>
+                               <th>Danh Mục</th>
+                               <th>Quản Lý</th>
+
+                           </tr>
+                       </thead>
+                       <tbody>
+                       <% data.forEach(function(motphantu){ %>
+                            <tr>
+                               <td><%= motphantu._id %></td>
+                               <td><%= motphantu.title %></td>
+                               <td><img height = "80px " src="../<%= motphantu.imgage[0] %>" alt=""></td>
+                               <td><%= motphantu.cates.cates_name %></td>
+                                <td>
+                                    <a  href="../admin/editnews/<%= motphantu._id %>" class="nutedit btn  "><i class="fa fa-pencil"></i> sửa </a>
+									/
+                                    <a  data-href="<%= motphantu._id %>" class="nutxoa btn"><i class=" fa fa-remove"></i> xóa </a>
+                                </td
+                           </tr>
+                        <% }) %>
+                           
+                       </tbody>
+                   </table>
+			
+				</div>
+	
+        
+        </div>
+         
+    </div> <!-- /#right-panel -->
+
+    <!-- Right Panel -->
+
+
+    <script>
+         jQuery(function($) {
+           
+		//xoá đối tượng
+
+		$('body').on('click', '.nutxoa', function(event) {
+			id = $(this).data('href');
+			doituongcanxoa = $(this).parent().parent();
+			$.ajax({
+				url: '../admin/deletnews/'+id,
+				type: 'post',
+				dataType: 'json'
+				
+			})
+			.done(function() {
+				console.log("success");
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+				// dung jquery xoa luon phan tuong
+				doituongcanxoa.remove();
+			});
+		}); 
+
+		//edit danh muc
+
+		
+        })
+    </script>
+
+    
+    
+</body>
+</html>

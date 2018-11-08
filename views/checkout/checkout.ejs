@@ -1,0 +1,147 @@
+ <% include ../partials/header %>
+	
+ 	<div class="checkout">
+ 		<div class="container">
+ 			<div class="row">
+ 				<div class="col-sm-6 trai">
+ 					<h3>Thông tin hóa đơn</h3>
+  					<p class="form-row form-row-first">  						
+  						 <label  >First Name</label>
+  						 <input type="text" class="input-text  ">
+  					</p>
+ 					<p class="form-row form-row-last">
+ 					 	<label  >Last Name</label>
+  						 <input type="text" class="input-text  ">
+  					</p>
+ 					<div class="clear"></div>
+
+ 					<p class="form-row form-row-wide"> 
+  					 	<label  >Office</label>
+  						 <input type="text" class="input-text  ">  						 
+ 					</p>
+ 					<p class="form-row form-row-wide"> 
+						<label  >Address 1</label>
+  						 <input type="text" class="input-text  ">  
+ 					</p>
+ 					<p class="form-row form-row-wide"> 
+						<label  >Address 2</label>
+  						 <input type="text" class="input-text  ">  
+ 					</p>
+ 					<p class="form-row form-row-wide"> 
+						<label  >City</label>
+  						 <input type="text" class="input-text  ">  
+
+ 					</p>
+
+ 					<p class="form-row form-row-first"> 
+						 <label>Country</label>
+  						 <input type="text" class="input-text  ">  
+ 					</p>
+ 					<p class="form-row form-row-last">
+						 <label>Zip Code</label>
+  						 <input type="text" class="input-text  "> 					 
+ 					 </p>
+ 					<div class="clear"></div>
+
+ 					 <p class="form-row form-row-first"> 
+						 <label>Email</label>
+  						 <input type="text" class="input-text  "> 					 
+
+ 					 </p>
+ 					<p class="form-row form-row-last"> 
+						 <label>Phone</label>
+  						 <input type="text" class="input-text  "> 					 
+
+ 					</p>
+ 					<div class="clear"></div>
+					<div class="giaohang">
+						<h3>
+							 <label  >Giao hàng tới địa chỉ khác</label>
+							 <input type="checkbox" class="ship_to_diffrent_address">
+
+						</h3>
+
+
+					</div>
+					<p class="form-row form-row-wide">
+						 
+						<textarea name="order_comments" placeholder="Ghi chú về ship hàng" ></textarea>
+					</p>
+
+
+
+ 				</div>
+ 				<div class="col-sm-6 phai">
+ 					<h3>Thông tin đơn hàng</h3>
+ 					<div id="order_review" class="xemlaidonhang">
+ 						<table class="table table-hover shop_table">
+ 							<thead>
+ 								<tr>
+ 									<th class="product-name">Tên sản phẩm</th>
+ 									<th class="product-total">Tổng cộng</th>
+ 								</tr>
+ 							</thead>
+ 							<tbody>
+ 								 <% product.forEach(function(motsanpham){ %>
+ 								<tr class="cart_item">
+ 									<td class="product-name"><%= motsanpham.item.tensp %></td>
+ 									<td class="product-total"> <%= motsanpham.price %></td>
+ 								</tr>
+								<%  }) %>
+ 							</tbody>
+ 							<tfoot>
+ 								<tr class="sub-total">
+ 									<th> Tổng phụ </th>
+ 									<td> <%= totalPrice %>đ</td>
+ 								</tr>
+ 								<tr class="shipping">
+ 									<th>Giao nhận</th>
+ 									<td>  Giao hàng COD</td>
+ 								</tr>
+								<tr class="order-total">
+ 									<th>Tổng </th>
+ 									<td> <%= totalPrice %></td>
+ 								</tr>
+								
+ 							</tfoot>
+ 						</table>
+						<div id="payment" class="payment_method">
+							<ul>
+								<li>
+									<input type="radio" class="input-radio">
+									<label>Direct Bank Transfer</label>
+									<div class="payment-box">
+										Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order wont be shipped until the funds have cleared in our account.
+									</div>
+								</li>
+
+								<li>
+									<input type="radio" class="input-radio">
+									<label>Check payment</label>
+									<div class="payment-box">
+										Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order wont be shipped until the funds have cleared in our account.
+									</div>
+								</li>
+
+								<li>
+									<input type="radio" class="input-radio">
+									<label>COD</label>
+									<div class="payment-box">
+										Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order wont be shipped until the funds have cleared in our account.
+									</div>
+								</li>
+
+
+							</ul>
+						</div>
+
+ 					</div>  <!-- HET ORDER REVIEW -->
+ 					<input type="submit" id="place_order" value="Đặt hàng">
+ 				</div>
+
+ 			</div>
+ 		</div>
+ 	</div>  <!-- HET CHECKOUT -->
+	
+
+  <% include ../partials/footer %>

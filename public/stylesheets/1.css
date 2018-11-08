@@ -1,0 +1,1695 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&subset=vietnamese');
+@import url('https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&subset=vietnamese');
+
+
+a.right.carousel-control {}
+
+input.tim {
+    border: 1px solid #ebebeb;
+    border-radius: 0px;
+    padding: 14px 20px;
+    width: 250px;
+    background: url(images/iconsearch.png) no-repeat 92% center;
+    /* margin: auto; */
+    display: inline-block;
+}
+
+input.tim::-webkit-input-placeholder {
+    color: #888;
+    font-family: 'Cabin', sans-serif;
+    font-size: 14px;
+    font-style: italic;
+}
+
+a.cctop {
+    display: inline-block;
+    color: #888;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 28px;
+    font-size: 12px;
+    padding-right: 37px;
+    padding-top: 11px;
+}
+
+a.cctop i.fa {
+    padding-right: 8px;
+}
+
+.thanhcc {
+    padding-top: 40px;
+    z-index: 2;
+    position: relative;
+}
+
+.menutop .navbar-light .navbar-nav li >.nav-link {
+    display: inline;
+    font-size: 14px;
+    color: #444;
+    font-family: Open Sans,sans-serif;
+    border-right: 1px solid #ebebeb;
+    padding: 4px 32px;
+}
+
+.menutop .navbar-light .navbar-nav li.active >.nav-link {
+    color: black;
+    font-weight: 600;
+}
+
+.menutop .navbar-light .navbar-nav li >.nav-link:hover {
+    color: black;
+}
+
+.menutop ul .nav-item {
+    float: none;
+    display: inline-block;
+    position: relative;
+    /* left: 0px; */
+    /* top: 0px; */
+}
+
+.menutop ul li ul {
+    position: absolute;
+    list-style: none;
+    text-align: left;
+    left: 2px;
+    top: 56px;
+    width: 168px;
+    background: white;
+    padding: 5px 13px;
+    transition: 0.4s;
+    padding-top: 17px;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 4;
+}
+
+.menutop ul li:hover ul {
+    opacity: 1;
+    visibility: visible;
+    top: 26px;
+}
+
+.menutop .navbar-nav .nav-item ul a {
+    color: gray;
+    display: block;
+    padding: 6px 0;
+    font-size: 14px;
+    padding-left: 16px;
+}
+
+.menutop .navbar-nav .nav-item ul a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.menutop ul.nav.navbar-nav {
+    text-align: center;
+    display: block;
+    border-top: 1px solid #ebebeb;
+    margin-top: 9px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.menutop a.navbar-brand {
+    display: block;
+    float: none;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: -83px;
+} 
+
+/*CSS CHO PHAN SLIDE */
+.motslide { position: relative;}
+.motslide .container2 {
+    position: absolute;
+    top: 19%;
+    right: 6%;
+    width: 87%;
+    font-family: "open sans",sans-serif;
+    text-align: center;
+    z-index: 3;
+}
+
+.carousel-control.right,.carousel-control.left {
+    background: transparent;
+    color: black;
+}
+
+a.right.carousel-control {
+    background: url(images/icon-right.png)  120px center no-repeat;
+}
+
+#slidecamnhan a.right.carousel-control {
+    background-image: url(images/nutcamnhanslide.png);
+}
+
+#slidecamnhan a.left.carousel-control {
+    background-image: url(images/nutcamnhanslide.png);
+}
+a.left.carousel-control {
+    background: url(images/icon-right.png)  120px center no-repeat;
+    transform: rotate(180deg);
+}
+
+
+.container2 h2 {
+    font-size: 41px;
+    color:#222;
+    margin-bottom: 28px;
+}
+.container2 .desc {
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: 38px;
+}
+.nutslide, input.update_cart, .actions .apply_coupon {
+    font-size: 13px;
+    color:#222;
+    text-transform: uppercase;
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    display: block;
+    margin: auto;
+    padding: 0px;
+    border-radius: 0px;
+    transition: 0.4s;
+}
+
+.actions .update_cart, .actions .apply_coupon,a.checkout-button {
+    background: none;
+    border: 1px solid rgba(204, 204, 204, 0);
+    background: #222;
+    color: white;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+a.checkout-button {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 16px;
+}
+a.checkout-button i {
+    transition: 0.4s;
+    padding-left:10px;
+    opacity: 0;
+}
+a.checkout-button:hover i {
+    opacity: 1;
+    padding-left: 30px;
+}
+a.checkout-button:hover{
+    background:#4f4f4f;
+}
+
+.actions input.apply_coupon {
+    width: auto;
+    padding: 0 15px;
+    display: inline-block;
+}
+
+input.update_cart:hover {
+    background: #777;
+}
+
+ /*css cho khoi 3 dichvu*/
+*{margin: 0; padding: 0;}
+
+.payment-box {
+    padding-left: 27px;
+    padding-bottom: 26px;
+}
+
+#payment ul li label {
+    color: #414141;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 11px;
+    margin-bottom: 15px;
+}
+
+#order_review tfoot tr.sub-total th,#order_review tfoot tr.sub-total td {
+    padding-top: 40px;
+}
+
+#order_review tfoot tr.shipping td,#order_review tfoot tr.order-total td {
+    color: black;
+    font-weight: bold;
+    font-size:15px;
+}
+
+tr.sub-total {}
+
+#order_review table tfoot tr th {
+    font-size: 14px;
+    color: #333;
+    text-transform: uppercase;
+    padding-left: 20px;
+}
+
+#order_review tr.cart_item td {
+    text-align: left;
+    padding-left: 23px;
+}
+
+#order_reivew tr.cart_item td {}
+
+div#payment {
+    background: white;
+    padding-top: 45px;
+    margin-top: 40px;
+}
+
+div#payment ul {
+    list-style: none;
+    padding-left: 19px;
+}
+
+div#order_review {
+    background: #f6f6f6;
+    padding: 25px;
+}
+
+.checkout textarea {
+    width: 100%;
+    padding: 10px;
+    font-family: cabin,sans-serif;
+    font-style: italic;
+    font-size: 13px;
+    min-height: 100px;
+}
+
+.checkout h3 {
+    text-transform: uppercase;
+    font-size: 25px;
+    line-height: 45px;
+    color: #333;
+    margin-top: 40px;
+}
+
+.checkout input.input-checkbox {
+    display: inline-block;
+    float: left;
+    margin-top: 17px;
+}
+
+.clear {
+    clear: both;
+}
+
+input.input-text {
+    width: 100%;
+    font-size: 14px;
+    font-family: cabin,sans-serif;
+    color: #a1a1a1;
+    padding: 11px 19px;
+}
+
+.form-row label {
+    display: block;
+    text-transform: uppercase;
+    font-family: cabin,sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    line-height: 45px;
+    margin: 0;
+}
+
+.form-row label.checkbox {
+    display: inline-block;
+    padding-left: 6px;
+}
+
+p.form-row.form-row-last {
+    width: 47%;
+    float: right;
+}
+
+p.form-row.form-row-first {
+    width: 47%;
+    float: left;
+}
+
+p.form-row {
+    margin: 0;
+}
+
+ul.shipping_method {
+    list-style: none;
+    margin: 0;
+}
+
+ul.shipping_method li label {
+    font-weight: normal;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.cart_total td {
+    color: #777;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+tr.order-total th {
+    font-size: 18px;
+}
+
+.cart_total h2 {
+    font-size: 25px;
+    font-family: cabin,sans-serif;
+    line-height: 45px;
+    text-transform: uppercase;
+    margin-top: 70px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+input.couponcode {
+    padding: 11px 13px;
+    position: relative;
+    right: -5px;
+}
+
+.cpc {
+    float: right;
+}
+
+.giohangchitiet h1 {
+    font-family: cabin,sans-serif;
+    font-size: 25px;
+    line-height: 45px;
+    text-transform: uppercase;
+    margin-top: 50px;
+    color: #333;
+}
+
+table.shop_table {
+    border: 1px solid #ebebeb;
+}
+
+#order_review table.table.table-hover.shop_table {
+    background: white;
+    margin: 0;
+    border: none;
+}
+
+.cart_total table.table.shop_table th {font-size: 15px;text-transform: uppercase;color: #333;vertical-align: top;font-weight: bold;}
+
+.cart_total .container .col-sm-5 {
+    padding: 0px;
+}
+
+tr.cart_item td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+td.product-remove i {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+td.product-remove i:hover {
+    transform: scale(1.7) rotate(360deg);
+}
+
+td.product-thumbnail img {
+    width: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 0 1px #ebebeb;
+}
+
+td.product-quantity .quantity {
+    width: 100%;
+}
+
+.shop_table thead {
+    border: 1px solid #ebebeb;
+}
+
+.shop_table thead th {
+    background: #f6f6f6;
+    text-align: center;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #222;
+    padding: 23px;
+    border-right: 1px solid #ebebeb;
+}
+
+#order_review table thead th {
+    border-bottom: 1px solid #414141;
+    background: none;
+    text-align: left;
+    border-right: none;
+}
+
+#order_review table thead th.product-name {
+    width: 70%;
+}
+
+a.mottinnho {
+    display: block;
+    overflow: hidden;
+    padding: 0 25px;
+    height: 80px;
+    font-family: cabin,sans-serif;
+    font-size: 13px;
+    color: #777;
+}
+
+a.mottinnho i {
+    font-style: normal;
+    font-size: 13px;
+    font-weight: 700;
+    /* text-transform: uppercase; */
+    color: #222;
+}
+
+a.mottinnho b {
+    display: block;
+    line-height: 16px;
+    font-weight: 300;
+    margin-bottom: 9px;
+    text-transform: uppercase;
+}
+
+a.mottinnho img {
+    width: 32%;
+    float: left;
+    margin-right: 10px;
+}
+
+span.so {
+    float: right;
+}
+
+.widget ul li {}
+
+.widget ul li a {
+    font-family: cabin,sans-serif;
+    font-size: 14px;
+    color: #777;
+    padding: 13px 17px;
+    display: block;
+    border-bottom: 1px solid #ededed;
+    transition: 0.4s;
+    position: relative;
+    padding-left: 31px;
+}
+
+.widget ul li a:before {content: "";width: 8px;height: 8px;border: 2px solid #ededed;display: block;position: absolute;left: 10px;top: 18px;transition: 0.4s;}
+
+.widget ul li a:hover {
+    color: #222;
+    padding-left: 34px;
+}
+
+.widget ul li a:hover:before {
+    border-color: #222;
+}
+
+.widget ul li:last-child a {
+    border: none;
+}
+
+h2.widget-title {
+    text-align: center;
+    background: #222;
+    color: white;
+    font-family: cabin,sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    /* padding: 10px 0; */
+    height: 56px;
+    line-height: 56px;
+}
+
+.widget {
+    margin-top: 40px;
+    border: 1px solid #ededed;
+}
+
+.widget ul {
+    list-style: none;
+    margin: 0;
+}
+
+input.search-submit {
+    height: 45px;
+    width: 16%;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background: transparent;
+    border: none;
+    text-indent: -9999px;
+    cursor: pointer;
+}
+
+input.search-field {
+    height: 45px;
+    padding: 15px;
+    border: 1px solid #a7a7a7;
+    width: 100%;
+    background: url(images/iconsearch.png) no-repeat 94% center;
+}
+
+form.search-form {
+    position: relative;
+}
+
+a.rmtin {
+    color: #222;
+    font-family: cabin,sans-serif;
+    font-size: 13px;
+    line-height: 26px;
+    margin-top: 30px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+a.rmtin:hover i {
+    padding-left: 20px;
+}
+
+a.rmtin i {
+    padding-left: 7px;
+    transition: 0.4s;
+}
+
+.trichdan {
+    color: #777;
+    font-size: 15px;
+    line-height: 26px;
+    margin-top: 33px;
+    font-family: cabin,sans-serif;
+}
+
+.thongsotin {
+    color: #777;
+    font-size: 14px;
+    line-height: 26px;
+    font-style: italic;
+    font-family: cabin,sans-serif;
+}
+
+.noidungtin {
+    padding: 0 10px 50px 10px;
+}
+
+.noidungtin h3 a {
+    font-family: cabin,sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    color: #222;
+    text-transform: uppercase;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+button.button.btn.btn-primary {
+    margin-top: 40px;
+    border-radius: 0px;
+    background: #222;
+    color: white;
+    font-family: cabin,sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    width: 100%;
+    height: 50px;
+    transition: 0.4s;
+}
+
+button.button.btn.btn-primary:hover {
+    background: #414141;
+}
+
+input.minus:hover,input.plus:hover{
+    border-color:#414141;
+}
+
+input.minus,input.plus {
+    width: 38px;
+    height: 38px;
+    border: 1px solid #a5a5a5;
+    background: none;
+    font-size: 20px;
+    position: relative;
+    transition:0.4s;
+    right: 4px;
+    top: 2px;
+    cursor: pointer;
+    box-shadow: none;
+}
+input.minus {
+    right: -5px;
+}
+input.qty::-webkit-inner-spin-button , input.qty::-webkit-outer-spin-button {
+    -webkit-appearance:none;
+}
+input.qty {
+    width: 48px;
+    height: 38px;
+    background: #444;
+    border: none;
+    color: white;
+    text-align: center;
+}
+
+span.label {
+    font-weight: 900;
+    color: #222;
+    line-height: 26px;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding-right: 20px;
+}
+
+.variation {
+    width: 50%;
+    float: left;
+}
+
+.quantity {
+    width: 50%;
+    float: left;
+}
+
+form.cart {
+    margin-top: 30px;
+}
+
+.in-stock {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: black;
+    font-family: cabin,sans-serif;
+    font-weight: 900;
+    margin-top: 42px;
+}
+ 
+.description {
+    
+font-size: 15px;
+    
+font-family: Cabin,sans-serif;
+    
+color: #777;
+    
+line-height: 26px;
+    
+margin-top: 46px;
+}
+
+p.price {
+    font-family: Cabin,sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+    line-height: 26px;
+    margin-top: 29px;
+}
+
+h1.product-title {
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #222;
+}
+
+.thumbnails a img {
+    width: 100%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0);
+    transition: 0.4s;
+}
+
+.thumbnails a img:hover {
+    box-shadow: 0 0 0 1px black;
+}
+
+.thumbnails a {
+    display: block;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.thumbnails {
+    width: 20%;
+    float: left;
+}
+
+a.bigimage {
+    width: 77%;
+    display: block;
+    float: left;
+    margin-right: 3%;
+}
+
+a.bigimage img {
+    width: 100%;
+}
+
+.sanpham {
+    margin-top: 100px;
+}
+
+nav.woocommerce-pagination {
+    text-align: center;
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+nav.woocommerce-pagination li {
+    display: inline;
+}
+
+.page-numbers {
+    color: #222;
+    font-size: 15px;
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    text-align: center;
+    line-height: 45px;
+    transition: 0.2s;
+    border-radius: 50%;
+}
+
+span.page-numbers.current,.page-numbers:hover {
+    border-radius: 50%;
+    background: #222;
+    color: white;
+    text-decoration: none;
+    transform: scale(1.07);
+}
+
+nav.woocommerce-pagination ul {
+    list-style: none;
+    display: inline;
+}
+
+form.woocommerce-ordering select.orderby {
+    padding: 10px 24px;
+    color: #222;
+    background: url(images/iconxuong.png) no-repeat 95% 48%;
+    -webkit-appearance: none;
+}
+
+span.show {
+    line-height: 26px;
+    display: block;
+    font-size: 14px;
+    padding: 10px 0;
+    color: #222;
+}
+
+b.btn.btn-outline-secondary.nutgrid, b.btn.btn-outline-secondary.nutlist {
+    border-radius: 0px;
+    border-color: #cecece;
+    color: #222;
+    font-size: 14px;
+    line-height: 26px;
+    padding-right: 24px;
+    padding-left: 24px;
+    margin-right: 20px;
+    transition:0.2s;
+    padding: 10px 24px;
+}
+b.btn.btn-outline-secondary.nutgrid:hover, b.btn.btn-outline-secondary.nutlist:hover {
+    background:#ecfbf8;
+    border-color:#ecfbf8;
+}
+
+.tieudelistsp h3 {
+    padding-top: 95px;
+    color: #222;
+    font-size: 25px;
+    line-height: 26px;
+    background: url(images/bg_tdsp.png) repeat-x bottom;
+    padding-bottom: 50px;
+    margin-bottom: 41px;
+}
+
+nav.breadcrumb {}
+
+nav.breadcrumb {
+    background: none;
+}
+
+nav.breadcrumb a {
+    color: white;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.ktieudetrong {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    z-index: 2;
+}
+
+.ktieudetrong h2 {font-family: Cabin,sans-serif;font-size: 35px;color: white;margin-bottom: 26px;text-transform: uppercase;}
+
+.ktieude {
+    height: 300px;
+    background: url(images/03.png);
+    background-size: cover;
+    display: table;
+    width: 100%;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.listtin .ktieude {
+    margin-bottom: 50px;
+}
+
+.ktieude:after {content: "";display: block;width: 100%;height: 100%;position: absolute;top: 0px;left: 0px;background: rgba(0, 0, 0, 0.32);}
+
+span.newnew {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    color: white;
+    background: black;
+    padding: 3px 9px;
+    text-transform: uppercase;
+    font-size: 12px;
+    top: 0px;
+    left: 0px;
+}
+
+span.newnew:after {content: "";display: block;width: 0px;height: 0px;position: absolute;background: rgba(255, 0, 0, 0);top: -24px;left: 42px;border: 24px solid rgba(0, 128, 0, 0);border-bottom-color: #000000;z-index: 1;border-left-width: 2px;border-right-width: 15px;}
+
+span.onsale {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 2;
+    display: block;
+    color: white;
+    background: #9f9f9f;
+    padding: 3px 8px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+span.onsale:after {content: "";display: block;width: 0px;height: 0px;position: absolute;background: rgba(255, 0, 0, 0);top: -24px;right: 41px;border: 24px solid rgba(0, 128, 0, 0);border-bottom-color: #9f9f9f;z-index: 1;border-right-width: 2px;border-left-width: 16px;}
+
+input.nhanmail {
+    width: 80%;
+    float: left;
+    border-radius: 0px;
+}
+
+input.nhanmail::-webkit-input-placeholder {
+    font-style: italic;
+    font-size: 14px;
+    font-family: cabin,sans-serif;
+}
+
+.form {
+    width: 100%;
+}
+
+.form input[type="submit"] {
+    width: 20%;
+    background: #212121;
+    color: white;
+    float: left;
+    box-sizing: border-box;
+    padding: 10px 0;
+    /* margin: 0px; */
+    font-size: 13px;
+    border-radius: 0px;
+}
+
+.nhanemail {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.nhanemail p {
+    font-size: 17px;
+    line-height: 26px;
+    font-family: cabin,sans-serif;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.nhanemail h2 {
+    text-transform: uppercase;
+    color: #222;
+    font-family: open sans,sans-serif;
+    margin-bottom: 30px;
+}
+
+p.nghe {
+    font-size: 14px;
+    font-family: Cabin,sans-serif;
+    line-height: 24px;
+    color: #777;
+    font-style: italic;
+}
+
+h4.tentg {
+    font-size: 15px;
+    font-family: "Open sans",sans-serif;
+    text-transform: uppercase;
+    color: #222;
+    line-height: 24px;
+}
+
+.caunx {
+    width: 34%;
+    margin: auto;
+    font-size: 15px;
+    line-height: 26px;
+    font-family: Cabin,sans-serif;
+    color: #777;
+    margin-bottom: 26px;
+}
+
+.motslidecn.text-xs-center img {
+    border-radius: 50%;
+    width: 76px;
+    height: 76px;
+    margin-bottom: 34px;
+}
+
+div.duoi {
+    height: 1254px;
+    margin-bottom: 54px;
+}
+
+span.anh1sp {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    max-height: 451px;
+    overflow: hidden;
+}
+
+span.anh1sp:after {content: "";position: absolute;display: block;width: 100%;height: 100%;background: rgba(255, 255, 255, 0.68);top: 0px;left: 0px;transition: 0.4s;opacity: 0;}
+
+.motsanphamchuan:hover .duoi span.anh1sp:after {
+    opacity: 1;
+}
+
+ol.carousel-indicators {
+    display: none;
+}
+
+.divdichvu {
+    height: 380px;
+    width: 100%;
+    background: url(images/05nho.png) no-repeat;
+    background-size: cover;
+    position: relative;
+    background-color: #f9eeec;
+}
+
+.divdichvu a {
+    color: white;
+    border-bottom: 2px solid #f9eeec;
+    display: inline-block;
+    font-size: 20px;
+    position: absolute;
+    bottom: 20px;
+    transition: 0.4s;
+    padding-left: 13px;
+}
+
+.divdichvu  a:hover {
+    text-decoration: none;
+    padding-left: 40px;
+}
+
+.badichvu .row .col-sm-4:nth-child(2) .divdichvu {
+    background-image: url(images/06nho.png);
+}
+
+.badichvu .row .col-sm-4:nth-child(3) .divdichvu {
+    background-image: url(images/07nho.png);
+}
+
+.badichvu {
+    margin-top: 100px;
+}
+
+
+ .spnoibat {
+    border-top: 1px solid #e6e6e6;
+    padding-top: 100px;
+    margin-top: 100px;  
+}
+
+.mt-100 {
+    /* border-top: 1px solid #e6e6e6; */
+    /* padding-top: 100px; */
+    margin-top: 100px;
+}
+
+.related-products {
+    margin-bottom: 100px;
+}
+
+.mt-100-vien {
+    border-top: 1px solid #e6e6e6;
+    padding-top: 100px;
+    margin-top: 100px;
+}
+
+.tinhome {
+    background: #fafafa;
+    padding-bottom: 121px;
+}
+h2.kieuchuto {
+    font-family: "Open Sans",sans-serif;
+    font-size: 25px;
+    color:#222;
+    background:url(./images/deco.png) no-repeat bottom center;
+    padding-bottom: 45px;
+    margin-bottom: 41px;
+}
+.spnoibat p.mota {
+    font-size: 15px;
+    font-family: "Cabin",sans-serif;
+    line-height: 26px;
+    color:#777; 
+    margin-bottom: 56px;
+}
+
+.row.gutter10 .col-sm-6 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.kngan {
+     
+    width: 100%;
+    height:330px;
+    margin-top:10px;
+    display: block;
+    box-sizing: border-box;
+    padding-top: 50px;
+    padding-left: 54px;
+    color:#222;
+    background:url(images/05nho.png) #f9eeec;
+    background-size: cover;
+    transition:0.4s;
+
+
+}
+.kngan:hover {
+    text-decoration: none;
+    padding-left:80px;
+}
+.kngan h4 {
+    font-size: 20px;
+    line-height: 26px;
+    color:#222;
+}
+.kngan b {
+    font-size: 13px;
+    color:#777;
+    line-height: 26px;
+}
+.kdai {
+    background-color: #ecfbf8;
+    height: 440px;
+    margin-top:10px;
+
+}
+
+.row.gutter10 .col-sm-6:nth-child(1) .kngan {
+
+}
+.row.gutter10 .col-sm-6:nth-child(1) .kdai {
+    background-image:url(images/06nho.png);
+}
+
+.row.gutter10 .col-sm-6:nth-child(2) .kngan {
+        background-image:url(images/07nho.png);
+
+}
+.row.gutter10 .col-sm-6:nth-child(2) .kdai {
+        background-image:url(images/08.jpg);
+    }
+
+/*css cho phan quang cao*/
+.quangcao1home{
+    margin-top:100px;
+    height:320px;
+    background:url(images/08.jpg) no-repeat;
+    background-size: cover;
+    font-family: "Open Sans",sans-serif;
+    background-attachment: fixed;
+}
+.qchome h2 {
+    font-size: 30px;
+    color:#222;
+    padding-bottom: 24px;
+    text-transform: uppercase;
+    margin-top: 100px;
+}
+.qchome p {
+    font-size: 12px;
+    color:#777;
+    padding-bottom: 13px;
+    letter-spacing: 2px;
+}
+
+.sanphamhome {
+    margin-top: 100px;
+}
+
+
+ /*CSS CHO PHAN HIEU UNG TAB */
+ul.tdtab {
+    text-align: center;
+    border-bottom: 1px solid #e6e6e6;
+}
+ ul.tdtab li b {
+    cursor: pointer;
+    font-weight: 500;
+    font-family: "Open Sans",sans-serif;
+    text-transform: uppercase;
+    font-size: 13px;
+    color:#222;
+    padding: 4px 26px;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+    position: relative;
+    bottom: -2px;
+    transition: 0.4s;
+ }
+
+ul.tdtab li b:hover, ul.tdtab li b.active {
+    border-bottom: 2px solid #2b2b2b;
+    color: black;
+}
+ ul.tdtab li {
+    display: inline;
+ }
+
+ul.ndtab {
+    position: relative;
+    list-style: none;
+    padding: 0;
+    margin:0;
+}
+.divsanpham {
+    
+    
+     
+    position: absolute;
+    transition: 0.4s; 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(200px);
+    width:100%;
+}
+.divsanpham.xuathien {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+}
+
+.motsanphamchuan {position: relative;margin-top: 48px;height: auto;}
+.motsanphamchuan .tren {
+    position: absolute;
+    top:0px;
+    left:0px;
+    /* background:white; */
+    padding-top: 200px;
+    width: 100%;
+    transition: 0.4s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.tren.ofs {
+    top: auto;
+    bottom: 128px;
+}
+
+.tren.ofs a {
+    width: 100%;
+    display: block;
+}
+
+.motsanphamchuan:hover .tren {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tren a {
+    color: white;
+    background: rgba(0, 0, 0, 0.79);
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+ 
+
+.tren a:hover {
+    text-decoration: none;
+    background: #2a2a2a;
+}
+
+.motsanphamchuan img {
+    max-width: 100%;
+    max-height: 451px;
+}
+
+.motsanphamchuan img:after {content: "";background: white;}
+.motsanphamchuan .duoi {
+    
+text-decoration: none;
+    
+color: #222;
+    
+font-family: Cabin,sans-serif;
+    
+display: block;
+}
+
+.motsanphamchuan a.duoi h3 {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-top: 28px;
+}
+
+.motsanphamchuan a.duoi .price {
+    font-size: 17px;
+    font-weight: 900;
+    color: #222;
+    margin-top: 20px;
+}
+
+.motsanphamchuan a.duoi .cat {
+    font-size: 15px;
+    color: #777;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+ /*CSS CHO PHAN KHOI TIN MOI TRANG CHU */
+ .anhtin {
+    position: relative;
+    width: 100%;
+    display: block;
+    height: 320px;
+    overflow: hidden;
+    margin-top: 59px;
+ }
+
+.mottinchuan a.anhtin {
+    height: auto;
+    margin-bottom: 40px;
+    margin-top: 0;
+}
+
+.mottinchuan a.anhtin:hover .ngaythang {
+    transition: 0.4s;
+    background: #777;
+    /* border-bottom: 5px solid black; */
+}
+ .anhtin img{
+    height: 100%;
+    width: auto;
+}
+
+.mottinchuan .anhtin img {
+    height: auto;
+    width: 100%;
+}
+ .anhtin .ngaythang{
+    position: absolute;
+    z-index: 1;
+    top: 30px;
+    left: 40px;
+    background:black;
+    padding:10px;
+    color:white;
+    font-family: "open sans",sans-serif;
+    text-align: center;
+    padding: 5px 17px;
+ }
+ .anhtin .ngaythang b{
+    display: block;
+    color: #fafafa;
+    font-size: 25px;
+    font-weight: 300;
+}
+ .anhtin .ngaythang i{
+    font-size: 18px;
+    text-transform: uppercase;
+    font-style: normal;
+    display: block;
+    margin-top: -8px;
+}
+
+.ndtin {
+    border: 3px solid white;
+    margin: -37px 40px 0 40px;
+    position: relative;
+    padding: 76px 37px 37px 37px;
+}
+.ndtin a.td1tin{
+    color: #222;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 26px;
+    font-family: open sans,sans-serif;
+    margin-bottom: 26px;
+    display: block;
+}
+.ndtin a.rm{
+    color: #222;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+.ndtin p{
+    font-family: cabin,sans-serif;
+    font-size: 15px;
+    line-height: 26px;
+    color: #777;
+    margin-bottom: 41px;
+}
+
+ /*CSS CHO PHAN FOOTER*/
+
+ footer.foot {
+    background: #111;
+    color:white;
+    padding-top: 121px;
+    margin-top: 50px;
+ }
+ footer   ul {
+    list-style: none;
+    padding:0;
+    margin:0;
+ }
+ footer ul li {
+    display: inline
+ }
+
+.copyright {
+    color: #989898;
+    font-size: 14px;
+    line-height: 28px;
+    text-align : center;
+    margin-top:10px;
+}
+
+.bando {
+    color: #989898;
+    font-size: 13px;
+    font-family: "open sans",sans-serif;
+}
+
+.tdfoot {
+    font-size: 18px;
+    font-family: "open sans",sans-serif;
+    color: #e1e1e1;
+    margin-bottom: 40px;
+}
+ footer .cot1 ul a{
+    display: block;
+    color:#989898;
+    font-size: 15px;
+    font-family: Cabin,sans-serif;
+    line-height: 28px;
+    transition: 0.4s;
+ }
+  footer .cot1 ul a:hover{
+    color:white;
+    text-decoration: none;
+    transform: translateX(5px);
+  }
+
+  .mangxh {
+    margin-top: 40px;
+    text-align: center;
+  }
+  .mangxh ul a {
+    display: inline-block;
+    width:50px;
+    height:50px;
+    line-height: 50px;
+    margin-right: 5px;
+    text-align: center;
+    color:#989898;
+    border-radius: 50%;
+    border: 1px solid #989898;
+    font-size: 18px;
+    transition: 0.4s;
+  }
+
+.mangxh ul a:hover {
+    color: #2b2b2b;
+    border-color: white;
+    background: white;
+    transform: translateY(-10px);
+}
+
+.thethanhtoan {
+    margin-top: 20px;
+    text-align: center;
+}
+.thethanhtoan ul a {
+    display: inline-block;
+    margin-right: 29px;
+    color:#989898;
+    transition: 0.4s;
+    font-size: 32px;
+}
+
+
+.thethanhtoan ul a:hover {    
+color:white;     
+transform: translateY(-5px);
+}  
+
+ /*CSS CHO TABSANPHAM*/
+ .tabspchitiet {
+    margin-top: 61px;
+    min-height: 315px;
+    padding-bottom: 20px;
+    background: url(images/bg_tdsp.png) repeat-x bottom;
+}
+ .tabspchitiet ul{list-style: none; }
+ .tabspchitiet ul.tabs li{    display: inline; }
+ .tabspchitiet ul.tabs li a{    
+    font-size: 13px;
+    text-transform: uppercase;
+    line-height: 26px;
+    color:#333;
+    padding:10px 35px;
+    border-bottom:2px solid transparent;
+    transition: 0.4s; 
+    font-weight: 600;
+  }
+   .tabspchitiet ul.tabs li:first-child a{
+    padding-left: 0px;
+   }
+
+
+ .tabspchitiet ul.tabs li a:hover,  .tabspchitiet ul.tabs li.active a  {
+    border-bottom-color:black;
+    text-decoration: none;
+ }
+ .single .tabsanpham{
+    position: absolute;
+    line-height: 26px;
+    color: #777;
+    font-size: 13px;  
+    transition: 0.4s;
+    opacity: 0;
+    visibility: hidden;  
+    height: 220px;
+    overflow-x: hidden;
+    overflow-y:scroll;
+ }
+ .single .tabsanpham.active {
+    opacity: 1;
+    visibility: visible;  
+ }
+
+#place_order {
+        background: none;
+    border: 1px solid rgba(204, 204, 204, 0);
+    background: #222;
+    color: white;
+    cursor: pointer;
+    transition: 0.4s;
+     width: 100%;
+    display: block;
+    text-align: center;
+    padding: 16px;
+}
+/*CSS CHO MAN HINH DI DONG ( IPAD VA IPHONE )*/
+@media (max-width: 576px){
+    *{}
+
+* {}
+
+p.price {
+    text-align: center;
+}
+
+h1.product-title {
+    text-align: center;
+    margin-top: 23px;
+    font-size: 27px;
+}
+
+.sanpham {
+    margin-top: 30px;
+}
+
+input.nhanmail {
+    width: 70%;
+}
+
+.form input[type="submit"] {
+    width: 30%;
+}
+
+span.newnew {
+    left: 8px;
+}
+
+span.onsale {
+    right: 9px;
+}
+
+.bando {
+    margin-top: 43px;
+}
+
+.col-sm-3.cot1 {
+    margin-bottom: 40px;
+}
+
+div.duoi {
+    height: 3918px;
+    margin-bottom: 54px;
+}
+
+a.kngan.kdai {
+    height: 300px;
+}
+
+.spnoibat {
+    margin-top: 30px;
+    padding-top: 30px;
+}
+
+.divdichvu {
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.badichvu {
+    margin-top: 10px;
+}
+
+.motslide:after {content: "";position: absolute;width: 100%;height: 380px;background: rgba(0, 0, 0, 0.44);top: 0px;}
+
+a.right.carousel-control,a.left.carousel-control {
+    background-position: center;
+}
+
+.container2 .nutslide {
+    width: 148px;
+    font-size: 13px;
+    height: 30px;
+    line-height: 30px;
+    background: white;
+}
+
+.container2 h2 {
+    font-size: 17px;
+    margin: 0;
+    margin-bottom: 6px;
+    /* z-index: 3; */
+    /* position: relative; */
+    color: white;
+}
+
+.container2 .desc {
+    font-size: 13px;
+    margin-bottom: 12px;
+    color: #d1d1d1;
+}
+
+.navbar-toggleable-md .navbar-nav .nav-item {
+    display: block;
+}
+
+.menutop ul li ul {
+    position: static;
+    visibility: visible;
+    opacity: 1;
+    transition: 0s;
+}
+
+.navbar-toggleable-xs .navbar-nav .nav-item {
+    display: block;
+}
+
+.menutop ul.nav.navbar-nav {
+    border: none;
+}
+
+.menutop .navbar-light .navbar-nav li >.nav-link {
+    display: block;
+    padding: 10px 0;
+    border-top: 1px dashed rgba(128, 128, 128, 0.75);
+    border-right: none;
+}
+
+.thanhcc {
+    padding-top: 0px;
+}
+
+input.tim {
+    margin-top: 12px;
+    width: 100%;
+}
+
+a.cctop {
+    padding-right: 18px;
+    padding-left: 22px;
+}
+    .menutop a.navbar-brand {/* background: red; */margin-top: 1px;padding: 0;}
+}
+
+@media (min-width: 577px) and (max-width: 991px){
+    *{}
+
+    a.cctop {
+        padding-right: 12px;
+    }
+
+    .menutop a.navbar-brand {}
+}

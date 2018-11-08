@@ -1,0 +1,183 @@
+<% include ../partials/header %>
+	
+		<div class="ktieude text-xs-center">
+		<div class="ktieudetrong">
+			<h2>Giỏ hàng</h2>
+			<nav class="breadcrumb">
+				<a href=",">Home </a> &nbsp; / &nbsp; <a href="/news">Tin tức</a>
+			</nav>
+		</div>
+		
+	</div> <!-- HET KHOI TIEU DE -->
+ 
+	<div class="giohangchitiet">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1> Tóm tắt giỏ hàng</h1>
+				</div>
+				<div class="col-sm-12 ">
+
+					<table  class="shop_table table  table-hover  ">
+						<thead>
+							<tr>
+								<th class="product-thumbnail"> Image</th>
+								<th class="product-name"> Products</th>
+								<th class="product-price"> Price</th>
+								<th class="product-quantity"> Quantity</th>
+								<th class="product-remove"> Remove</th>
+							</tr>
+						</thead>
+						<tbody>
+                        <% product.forEach(function(motsanpham){ %>
+                                <tr class="cart_item">
+								<td class="product-thumbnail"><img  weiht-max = "auto" src="../<%= motsanpham.item.anhsp[0] %>" alt=""></td>
+								<td class="product-name"><%= motsanpham.item.tensp %></td>
+								<td class="product-price"><%= motsanpham.item.gia %></td>
+								<td class="product-quantity">
+									<div class="quantity">										
+										<input type="button" class="minus" value="-">
+										<input type="number" value="<%= motsanpham.qty %>" class="qty">
+										<input type="button" class="plus" value="+"> 
+									</div>
+								</td>
+								<td class="product-remove"><i class="fa fa-times"></i></td>
+							</tr>
+                      <%  }) %>
+						</tbody>
+					</table>  <!-- HET SHOP TABLE -->
+
+					<div class="actions">
+						<div class="row">
+
+							<div class="col-sm-5">
+								<a href="/shop/1" class="nutslide btn btn-outline-secondary"> Continue shopping <i class="fa fa-long-arrow-right"></i> </a>
+							</div>
+							<div class="col-sm-7">
+								<div class="cpc">
+									<span class="label">COUPON CODE</span>
+									<input type="text" class="couponcode" placeholder="Enter you coupon code">
+									<input type="submit" class="apply_coupon" value="Apply Coupon">
+								</div>
+							</div>
+						</div>
+					</div> <!-- HET ACTION -->
+					<div class="cart_total">
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-5 push-sm-7">
+									<h2>Tổng tiền</h2>
+									 
+									<table class="table shop_table ">
+										
+										<tbody>
+											<tr class="cart-subtotal">
+												<th> Subtotal</th>
+												<td> <%= totalPrice %></td>	
+											</tr>
+											<tr class="shipping">
+												<th> Shipping </th>
+												<td> 
+													<ul class="shipping_method">
+														<li>
+															<input type="radio" class="shipping_method">
+															<label for=""> Giao hàng COD</label>
+														</li>
+
+														<li>
+															<input type="radio" class="shipping_method">
+															<label for=""> Miễn phí </label>
+														</li>
+
+													</ul>		
+												</td>
+											</tr>
+											<tr class="order-total">
+												<th> Total </th>
+												<th> <%= totalPrice %></th>
+											</tr>
+										
+
+										</tbody>
+									</table>
+									<div class="thanhtoan">
+										<a href="/checkout" class="checkout-button"> Thanh toán <i class="fa fa-long-arrow-right"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>   <!-- HET CART_TOTAL -->
+				</div>
+			</div>
+		</div>
+	</div>  <!-- HET GIO HANG CHI TIET -->
+
+<script>
+    jQuery(document).ready(function($) {
+			//  ajax cho thanh them hoac giam soluong san pham
+    $(document).on( 'click', '.plus, .minus', function() {
+
+        // Get values
+        var $qty        = $(this).closest('.quantity').find(".qty");
+        var currentVal  = parseFloat( $qty.val() );
+        var max         = 10;
+        var min         = parseFloat( $qty.attr('min') );
+        var step        = $qty.attr('step');
+
+        // Format values
+        if ( ! currentVal || currentVal == "" || currentVal == "NaN" ) currentVal = 0;
+        if ( max == "" || max == "NaN" ) max = '';
+        if ( min == "" || min == "NaN" ) min = 0;
+        if ( step == 'any' || step == "" || step == undefined || parseFloat( step ) == "NaN" ) step = 1;
+
+        // Change the value
+        if ( $(this).is('.plus') ) {
+
+            if ( max && ( max == currentVal || currentVal > max ) ) {
+                $qty.val( max );
+            } else {
+                $qty.val( currentVal + parseFloat( step ) );
+            }
+
+        } else {
+
+            if ( min && ( min==currentVal || currentVal < min ) ) {
+                $qty.val( min );
+            } else if ( currentVal > 0 ) {
+                $qty.val( currentVal - parseFloat( step ) );
+            }
+
+        }
+
+        // Trigger change event
+        $qty.trigger('change');
+    });
+
+	// them san pham vao gio hang
+	$('body').on('click', '.themsp', function(event) {
+			id = $(this).data('href');
+
+			$.ajax({
+				url: '../admin/deletecatesnews/'+id,
+				type: 'post',
+				dataType: 'json'
+				
+			})
+			.done(function() {
+				console.log("success");
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+				// dung jquery xoa luon phan tuong
+				doituongcanxoa.remove();
+			});
+		}); 
+
+
+	});
+</script>
+
+  <% include ../partials/footer %>
